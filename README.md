@@ -40,6 +40,7 @@ Frontend: `http://localhost:3000`
 Menggunakan **PostgreSQL** dengan **GORM** ORM.
 
 Database migrations otomatis membuat:
+
 - Users & authentication
 - Products & inventory
 - Warehouses & stock management
@@ -55,6 +56,7 @@ go run migrate.go
 ## 🛠️ Tech Stack
 
 **Backend:**
+
 - Go 1.16+
 - Gin Web Framework
 - PostgreSQL
@@ -62,6 +64,7 @@ go run migrate.go
 - JWT Authentication
 
 **Frontend:**
+
 - React 18+
 - Tailwind CSS
 - Context API
@@ -96,6 +99,7 @@ go run migrate.go
 ## 📖 Documentation
 
 Lihat [SETUP.md](SETUP.md) untuk:
+
 - Prerequisites & installation
 - Environment setup
 - Running migrations
