@@ -190,7 +190,7 @@ export default function StockOpname() {
     setEditingId(null);
     setFormData({
       product_id: "",
-      user_id: user?.id?.toString() || "", // Auto-fill with logged-in user
+      pengguna_id: user?.id?.toString() || "", // Auto-fill with logged-in user
       stok_sistem: 0,
       stok_fisik: "",
       catatan: "",
@@ -747,19 +747,19 @@ export default function StockOpname() {
           {/* Pagination */}
           <div className="px-5 py-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-sm text-gray-500">
-              Showing{" "}
+              Menampilkan{" "}
               <span className="font-semibold text-gray-900">
                 {filteredData.length > 0 ? startIndex + 1 : 0}
               </span>{" "}
-              to{" "}
+              ke{" "}
               <span className="font-semibold text-gray-900">
                 {Math.min(startIndex + itemsPerPage, filteredData.length)}
               </span>{" "}
-              of{" "}
+              dari{" "}
               <span className="font-semibold text-gray-900">
                 {filteredData.length}
               </span>{" "}
-              items
+              item
             </p>
             <div className="flex items-center gap-2">
               <button
@@ -875,7 +875,7 @@ export default function StockOpname() {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  User{" "}
+                  Pengguna{" "}
                   {!editingId && (
                     <span className="text-xs text-gray-500">
                       (Terisi Otomatis)

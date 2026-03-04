@@ -1285,7 +1285,7 @@ export default function Transactions() {
               {/* Product ID Dropdown */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Product
+                  Produk
                 </label>
                 <div className="relative">
                   <input
@@ -1349,18 +1349,18 @@ export default function Transactions() {
               {formData.type === "masuk" && (
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Warehouse
+                    Gudang
                   </label>
                   <select
-                    name="warehouse_id"
-                    value={formData.warehouse_id}
+                    name="gudang_id"
+                    value={formData.gudang_id}
                     onChange={handleFormChange}
                     className="w-full px-4 py-2 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
                   >
                     <option value="">
                       {warehouses.length === 0
-                        ? "Tidak ada warehouse..."
-                        : "Pilih Warehouse"}
+                        ? "Tidak ada gudang..."
+                        : "Pilih Gudang"}
                     </option>
                     {warehouses &&
                       Array.isArray(warehouses) &&
@@ -1535,7 +1535,7 @@ export default function Transactions() {
               {/* Jumlah */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Jumlah (Units) *
+                  Jumlah (Unit) *
                 </label>
                 <input
                   type="text"

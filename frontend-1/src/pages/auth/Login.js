@@ -142,13 +142,13 @@ export default function Login() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                    Password
+                    Kata Sandi
                   </label>
                   <Link
                     to="/auth/reset-password"
                     className="text-xs text-blue-600 hover:text-blue-700 transition-colors font-medium"
                   >
-                    Lupa Password?
+                    Lupa Kata Sandi?
                   </Link>
                 </div>
                 <div className="relative">
@@ -256,11 +256,11 @@ export default function Login() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                       />
                     </svg>
-                    Signing in...
+                    Masuk...
                   </>
                 ) : (
                   <>
-                    Sign In to Dashboard
+                    Masuk ke Dasbor
                     <svg
                       className="w-4 h-4"
                       fill="none"

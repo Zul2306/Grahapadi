@@ -621,19 +621,19 @@ export default function ProductManagement() {
           {/* Pagination */}
           <div className="px-5 py-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-sm text-gray-500">
-              Showing{" "}
+              Menampilkan{" "}
               <span className="font-semibold text-gray-900">
                 {filteredData.length > 0 ? startIndex + 1 : 0}
               </span>{" "}
-              to{" "}
+              ke{" "}
               <span className="font-semibold text-gray-900">
                 {Math.min(startIndex + itemsPerPage, filteredData.length)}
               </span>{" "}
-              of{" "}
+              dari{" "}
               <span className="font-semibold text-gray-900">
                 {filteredData.length}
               </span>{" "}
-              items
+              item
             </p>
             <div className="flex items-center gap-2">
               <button
@@ -644,7 +644,7 @@ export default function ProductManagement() {
                 Sebelumnya
               </button>
               <span className="text-sm font-medium text-gray-700">
-                Page {currentPage} of {totalPages || 1}
+                Halaman {currentPage} dari {totalPages || 1}
               </span>
               <button
                 onClick={() =>
