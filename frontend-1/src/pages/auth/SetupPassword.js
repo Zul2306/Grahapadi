@@ -120,10 +120,10 @@ export default function SetupPassword() {
             </div>
             <div>
               <h1 className="text-base sm:text-lg font-black text-gray-900">
-                Integrated Inventory
+                Inventaris Terpadu
               </h1>
               <p className="text-xs sm:text-sm text-gray-500 font-medium">
-                Inventory Management System
+                Sistem Manajemen Inventaris
               </p>
             </div>
           </div>

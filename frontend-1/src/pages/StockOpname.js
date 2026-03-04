@@ -445,7 +445,7 @@ export default function StockOpname() {
             onClick={openCreateModal}
             className="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl transition-colors"
           >
-            Add Stock Opname
+            Tambah Stock Opname
           </button>
         )}
       </header>
@@ -469,7 +469,7 @@ export default function StockOpname() {
             </svg>
             <input
               className="bg-transparent text-sm text-gray-600 outline-none flex-1 placeholder-gray-400"
-              placeholder="Cari produk, user, atau catatan..."
+              placeholder="Cari produk, pengguna, atau catatan..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -561,13 +561,13 @@ export default function StockOpname() {
                     }}
                     className="flex-1 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors font-medium"
                   >
-                    Clear
+                    Bersih
                   </button>
                   <button
                     onClick={() => setShowDatePicker(false)}
                     className="flex-1 px-3 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors font-medium"
                   >
-                    Apply
+                    Terapkan
                   </button>
                 </div>
               </div>
@@ -587,7 +587,7 @@ export default function StockOpname() {
                     Barang
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    User
+                    Pengguna
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                     Stok Sistem
@@ -714,7 +714,7 @@ export default function StockOpname() {
                               onClick={() => changeStatus(row.id, "approved")}
                               className="px-2 py-1 rounded text-xs font-semibold bg-green-50 text-green-700 hover:bg-green-100"
                             >
-                              Approve
+                              Setujui
                             </button>
                           )}
                         </div>
@@ -767,10 +767,10 @@ export default function StockOpname() {
                 disabled={currentPage === 1}
                 className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                Previous
+                Sebelumnya
               </button>
               <span className="text-sm font-medium text-gray-700">
-                Page {currentPage} of {totalPages || 1}
+                Halaman {currentPage} dari {totalPages || 1}
               </span>
               <button
                 onClick={() =>
@@ -779,7 +779,7 @@ export default function StockOpname() {
                 disabled={currentPage === totalPages || totalPages === 0}
                 className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                Next
+                Selanjutnya
               </button>
             </div>
           </div>
@@ -807,7 +807,7 @@ export default function StockOpname() {
           <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl">
             <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
               <h2 className="text-lg font-bold text-gray-900">
-                {editingId ? "Edit Stock Opname" : "Add Stock Opname"}
+                {editingId ? "Edit Stock Opname" : "Tambah Stock Opname"}
               </h2>
               <button
                 className="text-gray-400 hover:text-gray-600"

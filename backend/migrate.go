@@ -16,17 +16,20 @@ import (
 func main() {
 	// Load environment variables from .env file
 	if err := godotenv.Load(); err != nil {
-		log.Println("Warning: No .env file found, using system environment variables")
+		log.Println("⚠️  Warning: No .env file found, using system environment variables")
 	} else {
-		log.Println(".env file loaded successfully")
+		log.Println("✓ .env file loaded successfully")
 	}
 
-	// Load database configuration
+	// Load database configuration with explicit logging
 	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
 	dbUser := os.Getenv("DB_USER")
 	dbPass := os.Getenv("DB_PASSWORD")
 	dbName := os.Getenv("DB_NAME")
+
+	log.Printf("📋 Raw env values: DB_HOST=%q, DB_PORT=%q, DB_USER=%q, DB_NAME=%q", 
+		dbHost, dbPort, dbUser, dbName)
 
 	if dbHost == "" {
 		dbHost = "127.0.0.1"
@@ -37,16 +40,30 @@ func main() {
 	if dbUser == "" {
 		dbUser = "postgres"
 	}
-	if dbName == "" {
-		dbName = "inventory"
+	
+	// Force migrations to run against the inventory database regardless of what
+	// the environment variable says.  Users often forget to set DB_NAME or are
+	// pointed at the default 'postgres' database which triggers confusing errors.
+	if dbName != "inventory" {
+		log.Printf("⚠️  overriding DB_NAME (%s) to inventory for migration", dbName)
 	}
+	dbName = "inventory"
+	log.Printf("🎯 MIGRATION DATABASE (forced): %s", dbName)
+
+	log.Printf("📦 Database Configuration:")
+	log.Printf("   Host: %s", dbHost)
+	log.Printf("   Port: %s", dbPort)
+	log.Printf("   User: %s", dbUser)
+	log.Printf("   Database: %s ⭐", dbName)
+	log.Printf("   Password: %s", func() string { if dbPass != "" { return "***" } else { return "(empty)" } }())
 
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=UTC",
 		dbHost, dbUser, dbPass, dbName, dbPort)
 
+	log.Printf("🔗 Connecting to database: %s", dbName)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("Failed to connect to database: %v", err)
+		log.Fatalf("❌ Failed to connect to database: %v", err)
 	}
 
 	log.Println("✓ Connected to database successfully")

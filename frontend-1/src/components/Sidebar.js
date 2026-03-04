@@ -6,7 +6,7 @@ import { canAccessMenu } from "../utils/permissions";
 const navItems = [
   {
     path: "/",
-    label: "Dashboard",
+    label: "Dasbor",
     icon: (
       <svg
         className="w-5 h-5"
@@ -25,7 +25,7 @@ const navItems = [
   },
   {
     path: "/products",
-    label: "Product Management",
+    label: "Manajemen Produk",
     icon: (
       <svg
         className="w-5 h-5"
@@ -44,7 +44,7 @@ const navItems = [
   },
   {
     path: "/transactions",
-    label: "Transaction",
+    label: "Transaksi",
     icon: (
       <svg
         className="w-5 h-5"
@@ -82,7 +82,7 @@ const navItems = [
   },
   {
     path: "/warehouse",
-    label: "Warehouse",
+    label: "Gudang",
     icon: (
       <svg
         className="w-5 h-5"
@@ -101,7 +101,7 @@ const navItems = [
   },
   {
     path: "/product-inventory",
-    label: "Product Inventory",
+    label: "Inventaris Produk",
     icon: (
       <svg
         className="w-5 h-5"
@@ -120,7 +120,7 @@ const navItems = [
   },
   {
     path: "/users",
-    label: "User Management",
+    label: "Manajemen Pengguna",
     icon: (
       <svg
         className="w-5 h-5"
@@ -224,10 +224,10 @@ export default function Sidebar() {
           </div>
           <div>
             <p className="text-xs font-bold text-gray-900 uppercase tracking-wide leading-none">
-              Integrated
+              Terintegrasi
             </p>
             <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-              Inventory
+              Inventaris
             </p>
           </div>
         </div>
@@ -326,7 +326,7 @@ export default function Sidebar() {
                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
               />
             </svg>
-            Logout
+            Keluar
           </button>
         </div>
       </aside>

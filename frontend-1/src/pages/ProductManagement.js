@@ -366,7 +366,7 @@ export default function ProductManagement() {
           </svg>
           <input
             className="bg-transparent text-sm text-gray-600 outline-none min-w-0 flex-1 placeholder-gray-400"
-            placeholder="Search product name or SKU..."
+            placeholder="Cari nama produk atau SKU..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -409,7 +409,7 @@ export default function ProductManagement() {
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
             />
           </svg>
-          Export
+          Ekspor
         </button>
         {hasPermission(user?.role, PERMISSIONS.PRODUCT_CREATE) && (
           <button
@@ -429,7 +429,7 @@ export default function ProductManagement() {
                 d="M12 4v16m8-8H4"
               />
             </svg>
-            Add Product
+            Tambah Produk
           </button>
         )}
         <button className="p-2 rounded-xl hover:bg-gray-100 text-gray-500 transition-colors">
@@ -452,11 +452,10 @@ export default function ProductManagement() {
       <div className="flex-1 p-4 sm:p-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-900">
-            Product Management
+            Manajemen Produk
           </h1>
           <p className="text-sm text-gray-500 mt-1">
-            Manage and track your inventory catalog details with real-time
-            updates.
+            Kelola dan lacak detail katalog inventaris Anda dengan pembaruan waktu nyata.
           </p>
         </div>
 
@@ -470,7 +469,7 @@ export default function ProductManagement() {
                     No
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Product Info
+                    Info Produk
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                     Kode Barang
@@ -489,7 +488,7 @@ export default function ProductManagement() {
                   </th>
                   {!isStaff(user?.role) && (
                     <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                      Action
+                      Aksi
                     </th>
                   )}
                 </tr>
@@ -510,7 +509,7 @@ export default function ProductManagement() {
                       colSpan={isStaff(user?.role) ? "7" : "8"}
                       className="px-5 py-4 text-center text-gray-500"
                     >
-                      No products found
+                      Tidak ada produk ditemukan
                     </td>
                   </tr>
                 ) : (
@@ -642,7 +641,7 @@ export default function ProductManagement() {
                 disabled={currentPage === 1}
                 className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                Previous
+                Sebelumnya
               </button>
               <span className="text-sm font-medium text-gray-700">
                 Page {currentPage} of {totalPages || 1}
@@ -654,7 +653,7 @@ export default function ProductManagement() {
                 disabled={currentPage === totalPages || totalPages === 0}
                 className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                Next
+                Berikutnya
               </button>
             </div>
             {error && <div className="text-sm text-red-600">{error}</div>}

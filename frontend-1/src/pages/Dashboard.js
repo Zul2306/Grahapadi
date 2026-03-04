@@ -70,9 +70,9 @@ const getRangeStartDate = (period) => {
   const now = new Date();
   const start = new Date(now);
 
-  if (period === "7d") start.setDate(now.getDate() - 6);
-  if (period === "30d") start.setDate(now.getDate() - 29);
-  if (period === "90d") start.setDate(now.getDate() - 89);
+  if (period === "7h") start.setDate(now.getDate() - 6);
+  if (period === "30h") start.setDate(now.getDate() - 29);
+  if (period === "90h") start.setDate(now.getDate() - 89);
 
   start.setHours(0, 0, 0, 0);
   return start;
@@ -260,7 +260,7 @@ export default function Dashboard() {
         bg: "bg-red-50 border-red-100",
       },
       {
-        label: "NET MOVEMENT",
+        label: "GERAKAN BERSIH",
         value: formatNumber(netMovement),
         color: netMovement >= 0 ? "text-emerald-600" : "text-red-500",
         bg:
@@ -269,7 +269,7 @@ export default function Dashboard() {
             : "bg-red-50 border-red-100",
       },
       {
-        label: "LOW STOCK PRODUCTS",
+        label: "PRODUK STOK RENDAH",
         value: formatNumber(lowStockList.length),
         color: lowStockList.length > 0 ? "text-amber-600" : "text-gray-700",
         bg:
@@ -439,16 +439,16 @@ export default function Dashboard() {
           <div className="flex items-center gap-3">
             <div>
               <h1 className="text-lg font-black text-gray-900 tracking-tight">
-                Dashboard Overview
+                Ikhtisar Dasbor
               </h1>
               <p className="text-xs text-gray-500">
-                Real-time inventory analytics
+                Analitik inventaris waktu nyata
               </p>
             </div>
             <div className="flex items-center gap-2 ml-3 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-xs font-bold text-emerald-700 uppercase tracking-wide">
-                Live
+                Hidup
               </span>
             </div>
           </div>
@@ -785,7 +785,7 @@ export default function Dashboard() {
           <div className="bg-white rounded-2xl border border-gray-200 shadow-lg shadow-gray-200/50 p-6">
             <div className="mb-4">
               <h2 className="text-lg font-black text-gray-900">
-                Alert Low Stock
+                Peringatan Stok Rendah
               </h2>
               <p className="text-xs text-gray-500 mt-1">
                 Perlu perhatian segera
@@ -835,26 +835,26 @@ export default function Dashboard() {
       <footer className="border-t-2 border-gray-200 bg-gradient-to-r from-white to-gray-50 px-6 py-5">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <span className="text-gray-600 font-semibold">
-            © 2024 Integrated Inventory System
+            © 2024 Sistem Inventaris Terpadu
           </span>
           <div className="flex items-center gap-6">
             <a
               href="#!"
               className="text-gray-500 hover:text-blue-600 font-semibold uppercase tracking-wider transition-colors"
             >
-              Documentation
+              Dokumentasi
             </a>
             <a
               href="#!"
               className="text-gray-500 hover:text-emerald-600 font-semibold uppercase tracking-wider transition-colors"
             >
-              System Status
+              Status Sistem
             </a>
             <a
               href="#!"
               className="text-gray-500 hover:text-indigo-600 font-semibold uppercase tracking-wider transition-colors"
             >
-              Support Hub
+              Pusat Dukungan
             </a>
           </div>
         </div>

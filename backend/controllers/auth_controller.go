@@ -397,7 +397,11 @@ func Register(c *gin.Context) {
 		role = req.Role
 	}
 
+	// populate "nama" which is covered by unique partial index. Use email prefix
+	// so we don't insert duplicate empty strings (which violate idx_users_nama).
+	emailPrefix := strings.Split(req.Email, "@")[0]
 	user := models.User{
+		Nama:        emailPrefix,
 		NamaLengkap: req.NamaLengkap,
 		Email:       req.Email,
 		Password:    string(hashedPassword),

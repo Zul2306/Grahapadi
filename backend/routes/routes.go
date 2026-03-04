@@ -21,6 +21,54 @@ func SetupRoutes(r *gin.Engine) {
 		})
 	})
 
+	// Check database connection
+	r.GET("/db-check", func(c *gin.Context) {
+		var currentDB string
+		var currentHost string
+		var currentUser string
+		var currentPort string
+		var tableCount int64
+
+		// Get current database
+		if err := config.DB.Raw("SELECT current_database()").Scan(&currentDB).Error; err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"success": false,
+				"message": "Failed to get database name",
+				"error":   err.Error(),
+			})
+			return
+		}
+
+		// Get database settings from PostgreSQL
+		config.DB.Raw("SELECT setting FROM pg_settings WHERE name = 'listen_addresses'").Scan(&currentHost)
+		config.DB.Raw("SELECT setting FROM pg_settings WHERE name = 'port'").Scan(&currentPort)
+		config.DB.Raw("SELECT current_user").Scan(&currentUser)
+
+		// Count tables
+		config.DB.Raw("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public'").Scan(&tableCount)
+
+		sqlDB, _ := config.DB.DB()
+		stats := sqlDB.Stats()
+
+		c.JSON(http.StatusOK, gin.H{
+			"success": true,
+			"database_info": gin.H{
+				"name":             currentDB,
+				"current_user":     currentUser,
+				"public_tables":    tableCount,
+			},
+			"connection": gin.H{
+				"open_connections": stats.OpenConnections,
+				"in_use":           stats.InUse,
+				"idle":             stats.Idle,
+				"max_open":         stats.MaxOpenConnections,
+				"max_idle_closed":  stats.MaxIdleClosed,
+				"max_lifetime_closed": stats.MaxLifetimeClosed,
+			},
+			"message": "Database connection OK ✓",
+		})
+	})
+
 	// Database test endpoint
 	r.GET("/db-test", func(c *gin.Context) {
 		var count int64
@@ -63,11 +111,16 @@ func SetupRoutes(r *gin.Engine) {
 			tableLocations[i].RowCount = cnt
 		}
 		
+		// fetch index definitions for users table
+		var indexes []map[string]interface{}
+		config.DB.Raw("SELECT indexname, indexdef FROM pg_indexes WHERE tablename='users'").Scan(&indexes)
+
 		c.JSON(http.StatusOK, gin.H{
 			"success":         true,
 			"total_users":     count,
 			"users":           users,
 			"raw_count":       rawCount,
+			"indexes":         indexes,
 			"db_info": gin.H{
 				"database":       currentDB,
 				"schema":         currentSchema,

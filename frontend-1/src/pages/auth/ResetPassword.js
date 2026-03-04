@@ -93,15 +93,15 @@ export default function ResetPassword() {
                 </svg>
               </div>
               <span className="text-base sm:text-lg font-bold text-gray-900">
-                Integrated Inventory
+                Inventaris Terpadu
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mb-2 sm:mb-3">
-              Reset Password
+              Atur Ulang Kata Sandi
             </h1>
             <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-              Enter the email address associated with your account and we'll
-              send you a link to reset your password.
+              Masukkan alamat email yang terkait dengan akun Anda dan kami akan
+              mengirimkan tautan untuk mengatur ulang kata sandi Anda.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function ResetPassword() {
                   </svg>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-red-800">
-                      Failed to send reset email
+                      Gagal mengirim email reset
                     </p>
                     <p className="text-xs text-red-600 mt-1">{error}</p>
                   </div>
@@ -157,7 +157,7 @@ export default function ResetPassword() {
 
               <div>
                 <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-2">
-                  Email Address
+                  Alamat Email
                 </label>
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -215,7 +215,7 @@ export default function ResetPassword() {
                   </>
                 ) : (
                   <>
-                    Send Reset Link
+                    Kirim Tautan Reset
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -258,12 +258,12 @@ export default function ResetPassword() {
 
             <div className="mt-6 pt-6 border-t border-gray-200 text-center">
               <p className="text-xs text-gray-500">
-                Need further assistance?{" "}
+                Perlu bantuan lebih lanjut?{" "}
                 <Link
                   to="#"
                   className="text-blue-600 hover:text-blue-700 transition-colors"
                 >
-                  Contact Support
+                  Hubungi Dukungan
                 </Link>
               </p>
             </div>
@@ -311,11 +311,10 @@ export default function ResetPassword() {
             Precision in Every Piece of Inventory.
           </h2>
           <p className="text-blue-100 mb-8 leading-relaxed">
-            Manage assets across multiple locations with high-precision 3D
-            tracking and real-time enterprise analytics.
+            Kelola aset di berbagai lokasi dengan pelacakan 3D presisi tinggi dan analitik perusahaan waktu nyata.
           </p>
           <div className="inline-block px-4 py-2 bg-blue-500/30 border border-blue-400/50 rounded-full text-sm text-blue-100 backdrop-blur">
-            ● SYSTEMS ONLINE: 247 LOCATIONS TRACKED
+            ● SISTEM ONLINE: 247 LOKASI TERLACAK
           </div>
         </div>
       </div>

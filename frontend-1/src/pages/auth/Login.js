@@ -74,14 +74,14 @@ export default function Login() {
                 </svg>
               </div>
               <span className="text-base sm:text-lg font-bold text-gray-900">
-                Integrated Inventory
+                 Inventaris Terpadu
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mb-2 sm:mb-3">
-              Welcome back
+              Selamat Datang Kembali
             </h1>
             <p className="text-gray-500 text-xs sm:text-sm">
-              Please enter your credentials to access your warehouse dashboard.
+              Silakan masukkan kredensial Anda untuk mengakses dasbor gudang Anda.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export default function Login() {
               {/* Email */}
               <div>
                 <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider block mb-2">
-                  Email Address
+                  Alamat Email
                 </label>
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -148,7 +148,7 @@ export default function Login() {
                     to="/auth/reset-password"
                     className="text-xs text-blue-600 hover:text-blue-700 transition-colors font-medium"
                   >
-                    Forgot password?
+                    Lupa Password?
                   </Link>
                 </div>
                 <div className="relative">
@@ -225,7 +225,7 @@ export default function Login() {
                   className="w-4 h-4 rounded border-2 border-gray-300 bg-white text-blue-600 focus:ring-blue-500 focus:ring-offset-0"
                 />
                 <span className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
-                  Keep me logged in for 30 days
+                  Tetap masuk selama 30 hari
                 </span>
               </label>
 
@@ -282,7 +282,7 @@ export default function Login() {
             {/* SSO Section */}
             <div className="mt-6 pt-6 border-t border-gray-200">
               <p className="text-xs text-gray-500 text-center mb-4">
-                Or continue with SSO
+                Atau lanjutkan dengan SSO
               </p>
               <div className="grid grid-cols-2 gap-3">
                 <button className="flex items-center justify-center gap-2 py-2.5 px-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-all">
@@ -332,12 +332,12 @@ export default function Login() {
             {/* Footer */}
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-500">
-                Don't have an account?{" "}
+                Belum punya akun?{" "}
                 <Link
                   to="#"
                   className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
                 >
-                  Request Access
+                  Minta Akses
                 </Link>
               </p>
             </div>
@@ -382,14 +382,13 @@ export default function Login() {
             </svg>
           </div>
           <h2 className="text-4xl font-black mb-4 leading-tight">
-            Precision in Every Piece of Inventory.
+            Presisi di Setiap Item Inventaris.
           </h2>
           <p className="text-blue-100 mb-8 leading-relaxed">
-            Manage assets across multiple locations with high-precision 3D
-            tracking and real-time enterprise analytics.
+            Kelola aset di berbagai lokasi dengan pelacakan 3D presisi tinggi dan analitik perusahaan waktu nyata.
           </p>
           <div className="inline-block px-4 py-2 bg-blue-500/30 border border-blue-400/50 rounded-full text-sm text-blue-100 backdrop-blur">
-            ● SYSTEMS ONLINE: 247 LOCATIONS TRACKED
+            ● SISTEM ONLINE: 247 LOKASI TERLACAK
           </div>
         </div>
       </div>

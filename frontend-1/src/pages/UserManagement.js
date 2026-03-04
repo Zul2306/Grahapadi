@@ -301,7 +301,7 @@ export default function UserManagement() {
           </svg>
           <input
             className="bg-transparent text-sm text-gray-600 outline-none min-w-0 flex-1 placeholder-gray-400"
-            placeholder="Search users by name, email, or role..."
+            placeholder="Cari pengguna berdasarkan nama, email, atau peran..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -328,13 +328,13 @@ export default function UserManagement() {
               d="M12 4v16m8-8H4"
             />
           </svg>
-          Tambah User
+          Tambah Pengguna
         </button>
       </header>
 
       <div className="flex-1 p-4 sm:p-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">User Management</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Manajemen Pengguna</h1>
           <p className="text-sm text-gray-500 mt-1">
             Mengelola pengguna sistem, role, dan izin akses.
           </p>
@@ -344,25 +344,25 @@ export default function UserManagement() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           {[
             {
-              label: "Total Users",
+              label: "Total Pengguna",
               value: users.length,
               color: "text-blue-600",
               bg: "bg-blue-50",
             },
             {
-              label: "Active",
+              label: "Aktif",
               value: users.filter((u) => u.status === "active").length,
               color: "text-emerald-600",
               bg: "bg-emerald-50",
             },
             {
-              label: "Pending",
+              label: "Tertunda",
               value: users.filter((u) => u.status === "pending").length,
               color: "text-amber-600",
               bg: "bg-amber-50",
             },
             {
-              label: "Admins",
+              label: "Admin",
               value: users.filter((u) => u.role === "Admin").length,
               color: "text-purple-600",
               bg: "bg-purple-50",
@@ -406,16 +406,16 @@ export default function UserManagement() {
               <thead className="bg-gray-50/70 border-b border-gray-100">
                 <tr>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    User
+                    Pengguna
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden sm:table-cell">
-                    Role
+                    Peran
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                     Status
                   </th>
                   <th className="text-right px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Action
+                    Aksi
                   </th>
                 </tr>
               </thead>
@@ -426,7 +426,7 @@ export default function UserManagement() {
                       colSpan={4}
                       className="px-5 py-12 text-center text-sm text-gray-400"
                     >
-                      No users found.
+                      Tidak ada pengguna yang ditemukan.
                     </td>
                   </tr>
                 ) : (
@@ -506,28 +506,28 @@ export default function UserManagement() {
           </div>
           <div className="px-5 py-3 border-t border-gray-100">
             <p className="text-sm text-gray-400">
-              Showing{" "}
+              Menampilkan{" "}
               <span className="font-semibold text-gray-700">
                 {filtered.length}
               </span>{" "}
-              of{" "}
+              dari{" "}
               <span className="font-semibold text-gray-700">
                 {users.length}
               </span>{" "}
-              users
+              pengguna
             </p>
           </div>
         </div>
       </div>
 
       <footer className="border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
-        <span>© 2024 Integrated Inventory System • V2.6.0</span>
+        <span>© 2024 Sistem Inventaris Terpadu • V2.6.0</span>
         <div className="flex items-center gap-4">
           <a href="#!" className="hover:text-gray-700 uppercase tracking-wide">
-            Documentation
+            Dokumentasi
           </a>
           <a href="#!" className="hover:text-gray-700 uppercase tracking-wide">
-            System Status
+           Status Sistem
           </a>
         </div>
       </footer>
@@ -633,7 +633,7 @@ export default function UserManagement() {
               </div>
               <div>
                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1.5">
-                  Email Address
+                  Alamat Email
                 </label>
                 <input
                   type="email"
@@ -651,7 +651,7 @@ export default function UserManagement() {
                   className="flex-1 py-3 text-sm font-semibold text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors disabled:opacity-50"
                   disabled={isLoading}
                 >
-                  Cancel
+                  Batal
                 </button>
                 <button
                   type="submit"
@@ -705,7 +705,7 @@ export default function UserManagement() {
               </svg>
             </div>
             <h2 className="text-base font-bold text-gray-900 mb-1">
-              Hapus User
+              Hapus Pengguna
             </h2>
             <p className="text-sm text-gray-500 mb-6">
               Anda yakin ingin menghapus{" "}
@@ -759,7 +759,7 @@ export default function UserManagement() {
                 className="flex-1 py-2.5 text-sm font-semibold text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isDeleting}
               >
-                Cancel
+                Batal
               </button>
               <button
                 onClick={() => handleDelete(confirmDelete.id)}

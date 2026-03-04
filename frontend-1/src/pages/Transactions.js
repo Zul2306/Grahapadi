@@ -150,13 +150,13 @@ export default function Transactions() {
 
   const recalculateInventory = async () => {
     const confirm = await Swal.fire({
-      title: "Recalculate Inventory?",
+      title: "Hitung Ulang Inventory?",
       text: "Ini akan me-reset stok gudang berdasarkan data transaksi yang ada",
       icon: "question",
       showCancelButton: true,
       confirmButtonColor: "#3b82f6",
       cancelButtonColor: "#6b7280",
-      confirmButtonText: "Ya, Recalculate",
+      confirmButtonText: "Ya, Hitung Ulang",
       cancelButtonText: "Batal",
     });
 
@@ -164,7 +164,7 @@ export default function Transactions() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/warehouses/recalculate-inventory",
+        "http://localhost:8080/api/v1/warehouses/Hitung Ulang-inventory",
         {
           method: "POST",
         },
@@ -174,14 +174,14 @@ export default function Transactions() {
         await fetchWarehouseCapacities();
         Swal.fire({
           title: "Berhasil!",
-          text: `Inventory berhasil di-recalculate. ${result.updated_records} record diperbarui.`,
+          text: `Inventory berhasil di-Hitung Ulang. ${result.updated_records} record diperbarui.`,
           icon: "success",
           confirmButtonColor: "#3b82f6",
         });
       } else {
         Swal.fire({
           title: "Gagal!",
-          text: result.message || "Gagal recalculate inventory",
+          text: result.message || "Gagal Hitung Ulang inventory",
           icon: "error",
           confirmButtonColor: "#3b82f6",
         });
@@ -189,7 +189,7 @@ export default function Transactions() {
     } catch (err) {
       Swal.fire({
         title: "Error!",
-        text: "Gagal recalculate inventory: " + err.message,
+        text: "Gagal Hitung Ulang inventory: " + err.message,
         icon: "error",
         confirmButtonColor: "#3b82f6",
       });
@@ -732,7 +732,7 @@ export default function Transactions() {
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
             />
           </svg>
-          Export
+          Ekspor
         </button>
         <button
           onClick={recalculateInventory}
@@ -752,7 +752,7 @@ export default function Transactions() {
               d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
             />
           </svg>
-          Recalculate
+          Hitung Ulang
         </button>
         {pendingCount > 0 && !isStaff(user?.role) && (
           <div className="flex items-center gap-2 px-3 py-1.5 bg-orange-50 border border-orange-200 rounded-lg">
@@ -768,7 +768,7 @@ export default function Transactions() {
               />
             </svg>
             <span className="text-sm font-semibold text-orange-900">
-              {pendingCount} Pending
+              {pendingCount} Tertunda
             </span>
           </div>
         )}
@@ -790,7 +790,7 @@ export default function Transactions() {
                 d="M12 4v16m8-8H4"
               />
             </svg>
-            Add Transaction
+            Tambah Transaksi
           </button>
         )}
         <button className="p-2 rounded-xl hover:bg-gray-100 text-gray-500 transition-colors">
@@ -812,9 +812,9 @@ export default function Transactions() {
 
       <div className="flex-1 p-4 sm:p-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">Transactions</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Transaksi</h1>
           <p className="text-sm text-gray-500 mt-1">
-            Manage and track inventory transactions with real-time updates.
+            Kelola dan lacak transaksi inventaris dengan pembaruan waktu nyata.
           </p>
         </div>
 
@@ -927,19 +927,19 @@ export default function Transactions() {
                     No
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Product
+                    Produk
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Warehouse
+                    Gudang
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden md:table-cell">
                     Penanggung Jawab
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Type
+                    Jenis
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Quantity
+                    Kuantitas
                   </th>
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden lg:table-cell">
                     Waktu
@@ -949,7 +949,7 @@ export default function Transactions() {
                   </th>
                   {!isStaff(user?.role) && (
                     <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                      Action
+                      Aksi
                     </th>
                   )}
                 </tr>
@@ -970,7 +970,7 @@ export default function Transactions() {
                       colSpan={isStaff(user?.role) ? "8" : "9"}
                       className="px-5 py-4 text-center text-gray-500"
                     >
-                      No transactions found
+                      Tidak ada transaksi ditemukan
                     </td>
                   </tr>
                 ) : (
@@ -1138,19 +1138,19 @@ export default function Transactions() {
           {/* Pagination */}
           <div className="px-5 py-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-sm text-gray-500">
-              Showing{" "}
+              Menampilkan{" "}
               <span className="font-semibold text-gray-900">
                 {filteredData.length > 0 ? startIndex + 1 : 0}
               </span>{" "}
-              to{" "}
+              hingga {" "}
               <span className="font-semibold text-gray-900">
                 {Math.min(startIndex + itemsPerPage, filteredData.length)}
               </span>{" "}
-              of{" "}
+              dari {" "}
               <span className="font-semibold text-gray-900">
                 {filteredData.length}
               </span>{" "}
-              items
+              item
             </p>
             <div className="flex items-center gap-2">
               <button
@@ -1158,7 +1158,7 @@ export default function Transactions() {
                 disabled={currentPage === 1}
                 className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                Previous
+                Sebelumnya
               </button>
               <span className="text-sm font-medium text-gray-700">
                 Page {currentPage} of {totalPages || 1}
@@ -1170,7 +1170,7 @@ export default function Transactions() {
                 disabled={currentPage === totalPages || totalPages === 0}
                 className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                Next
+                berikutnya
               </button>
             </div>
           </div>
